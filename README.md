@@ -1,5 +1,7 @@
 # **Entity Compatibility w/ KubeJS for TerraFirmaCraft (TFC)**
 
+The guide is just there if you need it. I feel like the code in this repo should be enough for most people who are familiar with KubeJS to grasp what's needed for them to add compat.
+
 **Notes:**
 - You absolutely do not have to do it this way with KubeJS, this is just probably the easiest way to set this all up if you're going to use KubeJS. Please use [Entity Zoning Supervisor](https://www.curseforge.com/minecraft/mc-mods/entity-zoning-supervisor) if you think this is too complicated for you. Note that you'll probably want to still use KubeJS for other parts of compatibility, like loot tables and recipes.
 - Keep in mind that all of my code in here is **incomplete**; you will not get full Alex's Mobs compatibility from just my scripts. I'm currently working on a mod to add compatibility to Alex's Mobs but it'll take a while. I made this repo to help others get animal spawning working for other mods.
