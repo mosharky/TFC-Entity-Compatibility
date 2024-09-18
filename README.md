@@ -4,6 +4,7 @@
 - You absolutely do not have to do it this way with KubeJS, this is just probably the easiest way to set this all up if you're going to use KubeJS. Please use [Entity Zoning Supervisor](https://www.curseforge.com/minecraft/mc-mods/entity-zoning-supervisor) if you think this is too complicated for you. Note that you'll probably want to still use KubeJS for other parts of compatibility, like loot tables and recipes.
 - Keep in mind that all of my code in here is **incomplete**; you will not get full Alex's Mobs compatibility from just my scripts. I'm currently working on a mod to add compatibility to Alex's Mobs but it'll take a while. I made this repo to help others get animal spawning working for other mods.
 - Replace `your_namespace` with whatever you want your namespace to be.
+- Contact me by going to the #content channel in the TFC discord and finding the post I made for this repo. Feel free to ping me!
 
 
 ## **Dependencies**
@@ -57,7 +58,8 @@ Each animal object holds the following **required** fields and methods:
 Example (in startup script):
 ```js
 // priority: 100
-// HEY YOU! The prioerity is important; we need these arrays to load before everything else so we can use them in other scripts.
+// HEY YOU! The prioerity is important; we need these arrays to load before
+//  everything else so we can use them in other scripts.
 
 global.terrestrialAnimals = [
     {
@@ -131,7 +133,8 @@ global.amphibiousAnimals = [
 
 
 // ⚠️ IMPORTANT ⚠️
-// This combines all the arrays into one. We'll need to loop over all of animals with the same function in server_scripts, so we might as well define this in this script
+// This combines all the arrays into one. We'll need to loop over all of animals with 
+// the same function in server_scripts, so we might as well define this in this script
 global.allAnimals = global.terrestrialAnimals.concat(global.aquaticAnimals, global.amphibiousAnimals)
 ```
 
@@ -163,7 +166,8 @@ If you weren't aware, mob spawns in Minecraft are defined per-biome. TFC is no d
 How I did it (server script):
 ```js
 ServerEvents.highPriorityData(e => {
-    // HEY YOU! This didn't need to be a function for my use-case, but if you want to spawn hostile mobs, this will come in handy!
+    // HEY YOU! This didn't need to be a function for my use-case, 
+    // but if you want to spawn hostile mobs, this will come in handy!
     const addSpawn = (entityId, spawner, biomes) => {
         let entityIdSplit = entityId.split(':')
         let modId = entityIdSplit[0]
